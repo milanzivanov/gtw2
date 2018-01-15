@@ -1,0 +1,18 @@
+.search-box {
+  width: 100%;
+  float: left;
+  background-color: #00ae7b;
+  background: linear-gradient(45deg,#00ae7b,#0081bf);
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.search-box-wrapper {
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+

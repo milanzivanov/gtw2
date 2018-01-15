@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RootObject } from './weather-interface';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+
+  main: RootObject;
+
+  // aca
+
+  newRootObject(value: RootObject) {
+    this.main = value;
+    console.log('app component');
+    // console.log(this.main);
+
+  }
+
 }
