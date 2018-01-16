@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { RootObject } from '../weather-interface';
+import { log } from 'util';
 
 @Component({
   selector: 'app-header',
@@ -10,18 +11,22 @@ import { RootObject } from '../weather-interface';
 export class HeaderComponent implements OnInit {
 
   constructor() { }
+  //
+  @Output() messageEvent = new EventEmitter<string>();
 
-    // aca
-  @Output() rootObjectChanged = new EventEmitter<RootObject>();
+  message: string;
+  receiveMessage($event) {
+    this.message = $event;
+  }
 
-    // aca
-  newRootObject(value: RootObject) {
 
-    this.rootObjectChanged.emit(value);
-
+  sendMessage(message: string) {
+    this.messageEvent.emit(this.message);
+    console.log(this.message);
   }
 
   ngOnInit() {
   }
+
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { WeatherService } from '../weather.service';
 import { RootObject } from '../weather-interface';
 
@@ -10,9 +10,6 @@ import { RootObject } from '../weather-interface';
 export class WeatherBoxComponent implements OnInit, OnChanges {
 
   constructor() { }
-
-  // aca
-  @Input() inputData: RootObject;
 
   ngOnInit() {
   }

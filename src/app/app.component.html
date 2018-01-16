@@ -1,2 +1,3 @@
-<app-header (rootObjectChanged)="newRootObject($event)"></app-header>
-<app-weather-box [inputData]="main"></app-weather-box>
+<app-header (messageEvent)="receiveMessage($event)"></app-header>
+<app-weather-box></app-weather-box>
+app-component: {{message}}

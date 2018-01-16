@@ -39,9 +39,4 @@ export class WeatherService {
 
   }
 
-  // shering data
-  chengeMessage(message: string) {
-    this.messageSource.next(message);
-  }
-
 }

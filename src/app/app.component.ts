@@ -8,15 +8,10 @@ import { RootObject } from './weather-interface';
 })
 export class AppComponent {
 
-  main: RootObject;
-
-  // aca
-
-  newRootObject(value: RootObject) {
-    this.main = value;
-    console.log('app component');
-    // console.log(this.main);
-
+  message: string;
+  receiveMessage($event) {
+    this.message = $event;
+    console.log($event);
   }
 
 }

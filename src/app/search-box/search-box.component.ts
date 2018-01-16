@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 import { WeatherService } from '../weather.service';
 import { RootObject } from '../weather-interface';
@@ -20,16 +20,17 @@ import { Observable } from 'rxjs/Observable';
 
 export class SearchBoxComponent implements OnInit {
 
-  @Input() msg: string;
+  // 1 output search to header
+  message = '1 output search to header';
 
-  // aca
-  @Output() rootObjectChanged = new EventEmitter<RootObject>();
+  // 1 output search to header
+  @Output() messageEvent = new EventEmitter<string>();
+
+  main: RootObject;
 
   // di
   constructor(private _weather: WeatherService,
               private http: HttpClient) { }
-
-  main: RootObject;
 
 
   // cityName: string;
@@ -56,14 +57,14 @@ export class SearchBoxComponent implements OnInit {
                     // const weatherCity = res;
 
                     this.main = res;
-
                     // console.log(res);
 
-                    // aca event metod koji prima metod
-                    this.rootObjectChanged.emit(res);
-
-
                   });
+  }
+
+  // 1 output search to header
+  sendMessage() {
+    this.messageEvent.emit(this.message);
   }
 
 }
