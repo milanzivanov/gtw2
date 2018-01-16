@@ -8,9 +8,4 @@ import { RootObject } from './weather-interface';
 })
 export class AppComponent {
 
-  message: string;
-  receiveMessage($event) {
-    this.message = $event;
-  }
-
 }

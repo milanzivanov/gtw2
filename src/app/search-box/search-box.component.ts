@@ -20,11 +20,6 @@ import { Observable } from 'rxjs/Observable';
 
 export class SearchBoxComponent implements OnInit {
 
-  // 1 output search to header
-  message = '1 output search to header';
-
-  // 1 output search to header
-  @Output() messageEvent = new EventEmitter<string>();
 
   main: RootObject;
 
@@ -62,10 +57,6 @@ export class SearchBoxComponent implements OnInit {
                   });
   }
 
-  // 1 output search to header
-  sendMessage() {
-    this.messageEvent.emit(this.message);
-  }
 
 }
 
