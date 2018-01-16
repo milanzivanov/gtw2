@@ -19,7 +19,6 @@ export class HeaderComponent implements OnInit {
     this.message = $event;
   }
 
-
   sendMessage(message: string) {
     this.messageEvent.emit(this.message);
     console.log(this.message);
@@ -27,6 +26,5 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-
 
 }
