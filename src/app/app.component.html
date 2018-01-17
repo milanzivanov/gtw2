@@ -1,3 +1,5 @@
-<app-header></app-header>
-<app-weather-box></app-weather-box>
+<app-header (rootEventParent)="receiveDataFromRoot($event)"></app-header>
+<!-- 3 app-component -- input weather-box -->
+<app-weather-box [childData]="main"></app-weather-box>
+<p>Output header to app-component: {{ main?.city.name }}</p>
 

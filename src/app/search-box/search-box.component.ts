@@ -23,6 +23,9 @@ export class SearchBoxComponent implements OnInit {
 
   main: RootObject;
 
+  // 2
+  @Output() rootEvent = new EventEmitter<RootObject>();
+
   // di
   constructor(private _weather: WeatherService,
               private http: HttpClient) { }
@@ -54,6 +57,7 @@ export class SearchBoxComponent implements OnInit {
                     this.main = res;
                     // console.log(res);
 
+                    this.rootEvent.emit(res);
                   });
   }
 

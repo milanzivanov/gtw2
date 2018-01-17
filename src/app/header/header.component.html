@@ -2,8 +2,10 @@
 <div class="search-box">
   <div class="wrapper">
       <div class="search-box-wrapper">
-        <app-search-box></app-search-box>
+        <app-search-box (rootEvent)="receiveData($event)"></app-search-box>
       </div>
   </div>
 </div>
+<!-- pitanje za acu -->
+<p>Output search to header {{ main?.city.country }} </p>
 
