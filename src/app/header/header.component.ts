@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { RootObject } from '../weather-interface';
-import { log } from 'util';
 
 @Component({
   selector: 'app-header',

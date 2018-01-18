@@ -3,40 +3,8 @@
   <!-- data -->
 </p>
 <!-- 3 [childData]="main" -->
-<p>Weather box: {{ childData?.city.name }}</p>
 <div class="container">
     <div class="wrapper">
-        <div class="wrapper-container">
-            <div class="weather-box"
-                 *ngFor="let item of result;
-                         let i = index">
-              <div class="weather-box_content">
-                <div class="content-box">
-                  <div class="box">
-                    <h3>{{ item.cityName }}</h3>
-                  </div>
-                  <div class="box">
-                    <span>{{ item.temp }}<sup>&deg;C</sup></span>
-                  </div>
-                  <div class="box">
-                    <p>Humidity: {{ item.humid }}%</p>
-                  </div>
-                </div>
-                <div class="content-box">
-                    <div class="box">
-                        <h5>{{ item.date }}</h5>
-                    </div>
-                    <div class="box">
-                        <span>
-                            <img src='http://openweathermap.org/img/w/{{item.icon}}.png' alt="icon" />
-                        </span>
-                    </div>
-                    <div class="box">
-                        <p>wind: {{item.wind}}km/h</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
+      <weather-box-item *ngFor="let item of items" [item]="item"></weather-box-item>
     </div>
 </div>

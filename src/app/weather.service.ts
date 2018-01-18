@@ -7,28 +7,22 @@ import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
-
-
-// shering data
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { log } from 'util';
 
 
 @Injectable()
 export class WeatherService {
 
-  // shering data
-  private messageSource = new BehaviorSubject<string>('default message');
-  currentMessage = this.messageSource.asObservable();
-
-  readonly _url = `http://api.openweathermap.org/data/2.5/forecast?id%20=524901&APPID=cf4acfccaeb719f8f2992c4f80d2031b&q=subotica&units=metric`;
+  // result: RootObject[];
 
   // di
   constructor(private _http: HttpClient) { }
 
   // geting wether data from api
-  getWeather() {
+  getWeather(cityName: string) {
 
-    return this._http.get(this._url)
+    return this._http.get(`http://api.openweathermap.org/data/2.5/forecast?id
+    =524901&APPID=cf4acfccaeb719f8f2992c4f80d2031b&q=${cityName}&units=metric`)
               // .map(result => <RootObject>result);
               .map((result) => {
                 // return result as RootObject;
@@ -38,5 +32,11 @@ export class WeatherService {
               });
 
   }
+
+  // remove
+  // removeItemService(i) {
+  //   this.result.splice(i, 1);
+  //   console.log('obrisano');
+  // }
 
 }

@@ -11,13 +11,16 @@ import { SearchBoxComponent } from './search-box/search-box.component';
 import { WeatherBoxComponent } from './weather-box/weather-box.component';
 import { WeatherService } from './weather.service';
 
+import { WeatherBoxItemComponent } from './weather-box/wather-box-item/weather-box-item';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SearchBoxComponent,
-    WeatherBoxComponent
+    WeatherBoxComponent,
+    WeatherBoxItemComponent
   ],
   imports: [
     BrowserModule,
