@@ -17,12 +17,14 @@ export class HeaderComponent implements OnInit {
   message: string;
   receiveMessage($event) {
     this.message = $event;
+
+    this.messageEvent.emit(this.message);
   }
 
 
   sendMessage(message: string) {
-    this.messageEvent.emit(this.message);
-    console.log(this.message);
+    // this.messageEvent.emit(this.message);
+    console.log('jebo ga ja: ' + this.message);
   }
 
   ngOnInit() {
