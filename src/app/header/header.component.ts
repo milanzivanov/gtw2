@@ -1,6 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-
-import { RootObject } from '../weather-interface';
 import { CityInfo } from '../weather.service';
 
 @Component({
@@ -23,7 +21,6 @@ export class HeaderComponent implements OnInit {
 
   // 1 search -- output -- > header
   onCityAdded(value: CityInfo) {
-
     this.main = value;
 
     // 2 header -- output --> app-component
@@ -32,10 +29,8 @@ export class HeaderComponent implements OnInit {
 
   // 555
   onCityRemoved(value: CityInfo) {
-
     console.log('log from remove on header component');
     this.cityRemoved.emit(value);
-
   }
 
   ngOnInit() {

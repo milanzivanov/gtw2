@@ -11,11 +11,8 @@ export class AppComponent {
   // 555
   itemsApp: CityInfo[] = [];
 
-  //
-
   // 2 header -- output --> app-component
   onCityAdded(value: CityInfo) {
-
     this.itemsApp.push(value);
   }
 

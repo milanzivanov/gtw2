@@ -1,7 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-
 import { WeatherService, CityInfo } from '../weather.service';
-// import { RootObject } from '../weather-interface';
 
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
@@ -12,9 +10,7 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./search-box.component.scss']
 })
 
-
 export class SearchBoxComponent implements OnInit {
-
 
   main: CityInfo;
 
@@ -32,28 +28,17 @@ export class SearchBoxComponent implements OnInit {
 
   // input search
   cityName: string;
-  // result: { cityName: string,
-  //           temp: number,
-  //           humid: number,
-  //           icon: string,
-  //           date: string,
-  //           wind: number}[] = [];
+
   // 555
   result: CityInfo[] = [];
 
-  // addedCities: string[] = [];
-
   ngOnInit(): void {
-
-    console.log('box-search');
     console.log(this.result);
-    // call init()
+    // call init() //
     // this.init();
-
   }
 
   init() {
-
     // input search
     const addedCities = this.cityName.split(',').map(city => city.trim());
 
@@ -62,8 +47,6 @@ export class SearchBoxComponent implements OnInit {
       // http service
       this._weather.getWeather(city)
                    .subscribe(res => {
-
-                      // const weatherCity = res;
 
                       this.main = res;
                       console.log(res);
@@ -74,14 +57,11 @@ export class SearchBoxComponent implements OnInit {
                       // push data to resalt[]
                       this.result.push(res);
 
-
-
                       // empty field
                       this.cityName = '';
 
                     });
     });
-
   }
 
   // add
@@ -96,13 +76,10 @@ export class SearchBoxComponent implements OnInit {
     // 555
     const root = this.result[i];
     this.result.splice(i, 1);
-    // this._weather.removeItemService(i);
 
     // 555
     this.cityRemoved.emit(root);
     console.log('test remove 111');
   }
-
-
 }
 

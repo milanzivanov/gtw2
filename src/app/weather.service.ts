@@ -1,19 +1,11 @@
 import { Injectable } from '@angular/core';
-
 import { RootObject } from './weather-interface';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import 'rxjs/add/operator/map';
-
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw';
-import { log } from 'util';
-
 
 @Injectable()
 export class WeatherService {
-
-  // result: RootObject[];
 
   // di
   constructor(private _http: HttpClient) { }
@@ -41,12 +33,6 @@ export class WeatherService {
               });
 
   }
-
-  // remove
-  // removeItemService(i) {
-  //   this.result.splice(i, 1);
-  //   console.log('obrisano');
-  // }
 
 }
 

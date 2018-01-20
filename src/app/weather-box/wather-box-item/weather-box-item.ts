@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { WeatherService, CityInfo } from '../../weather.service';
-// import { RootObject } from '../../weather-interface';
-
 
 @Component({
   // tslint:disable-next-line:component-selector
