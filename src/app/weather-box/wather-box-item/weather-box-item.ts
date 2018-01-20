@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { WeatherService } from '../../weather.service';
-import { RootObject } from '../../weather-interface';
+import { WeatherService, CityInfo } from '../../weather.service';
+// import { RootObject } from '../../weather-interface';
 
 
 @Component({
@@ -11,7 +11,6 @@ import { RootObject } from '../../weather-interface';
 })
 export class WeatherBoxItemComponent {
 
-
-  @Input() item: RootObject;
+  @Input() item: CityInfo;
 
 }

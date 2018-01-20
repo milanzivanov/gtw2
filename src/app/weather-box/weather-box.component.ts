@@ -1,7 +1,6 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
-import { WeatherService } from '../weather.service';
-import { RootObject } from '../weather-interface';
-import { log } from 'util';
+import { WeatherService, CityInfo } from '../weather.service';
+// import { RootObject } from '../weather-interface';
 
 @Component({
   selector: 'app-weather-box',
@@ -12,6 +11,6 @@ export class WeatherBoxComponent {
 
   constructor() { }
 
-  @Input() items: RootObject[];
+  @Input() items: CityInfo[];
 
 }

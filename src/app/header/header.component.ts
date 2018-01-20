@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { RootObject } from '../weather-interface';
+import { CityInfo } from '../weather.service';
 
 @Component({
   selector: 'app-header',
@@ -10,23 +11,31 @@ import { RootObject } from '../weather-interface';
 export class HeaderComponent implements OnInit {
 
   // 1 search -- output -- > header
-  main: RootObject;
+  main: CityInfo;
 
   // 2 header -- output --> app-component
-  @Output() rootEventParent = new EventEmitter<RootObject>();
+  @Output() cityAdded = new EventEmitter<CityInfo>();
+
+  // 555 u headr serach
+  @Output() cityRemoved = new EventEmitter<CityInfo>();
 
   constructor() { }
 
   // 1 search -- output -- > header
-  receiveData(value: RootObject) {
+  onCityAdded(value: CityInfo) {
 
     this.main = value;
-    // pitanje za acu? zasto se ovo u html-u ne vidi?
-    console.log('Header component ' + value.city.country);
 
     // 2 header -- output --> app-component
-    this.rootEventParent.emit(value);
-    console.log('app component ' + value.city.id);
+    this.cityAdded.emit(value);
+  }
+
+  // 555
+  onCityRemoved(value: CityInfo) {
+
+    console.log('log from remove on header component');
+    this.cityRemoved.emit(value);
+
   }
 
   ngOnInit() {

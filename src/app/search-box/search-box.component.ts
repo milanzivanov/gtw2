@@ -1,8 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
-import { WeatherService } from '../weather.service';
-import { RootObject } from '../weather-interface';
-
+import { WeatherService, CityInfo } from '../weather.service';
+// import { RootObject } from '../weather-interface';
 
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
@@ -17,10 +16,13 @@ import { Observable } from 'rxjs/Observable';
 export class SearchBoxComponent implements OnInit {
 
 
-  main: RootObject;
+  main: CityInfo;
 
-  // 2
-  @Output() rootEvent = new EventEmitter<RootObject>();
+  // 2 promeniti cityAdded
+  @Output() cityAdded = new EventEmitter<CityInfo>();
+
+  // 5555
+  @Output() cityRemoved = new EventEmitter<CityInfo>();
 
   // di
   constructor(private _weather: WeatherService,
@@ -30,12 +32,14 @@ export class SearchBoxComponent implements OnInit {
 
   // input search
   cityName: string;
-  result: { cityName: string,
-            temp: number,
-            humid: number,
-            icon: string,
-            date: string,
-            wind: number}[] = [];
+  // result: { cityName: string,
+  //           temp: number,
+  //           humid: number,
+  //           icon: string,
+  //           date: string,
+  //           wind: number}[] = [];
+  // 555
+  result: CityInfo[] = [];
 
   // addedCities: string[] = [];
 
@@ -65,17 +69,12 @@ export class SearchBoxComponent implements OnInit {
                       console.log(res);
 
                       // output
-                      this.rootEvent.emit(res);
+                      this.cityAdded.emit(res);
 
                       // push data to resalt[]
-                      this.result.push({
-                        cityName: res.city.name,
-                        temp: res.list[0].main.temp,
-                        humid: res.list[0].main.humidity,
-                        icon: res.list[0].weather[0].icon,
-                        wind: res.list[0].wind.speed,
-                        date: res.list[0].dt_txt
-                      });
+                      this.result.push(res);
+
+
 
                       // empty field
                       this.cityName = '';
@@ -94,9 +93,15 @@ export class SearchBoxComponent implements OnInit {
 
   // remove
   removeItem(i) {
+    // 555
+    const root = this.result[i];
     this.result.splice(i, 1);
     // this._weather.removeItemService(i);
-}
+
+    // 555
+    this.cityRemoved.emit(root);
+    console.log('test remove 111');
+  }
 
 
 }

@@ -1,5 +1,29 @@
-<app-header (rootEventParent)="receiveDataFromRoot($event)"></app-header>
+<app-header (cityAdded)="onCityAdded($event)"
+            (cityRemoved)="onCityRemoved($event)">
+</app-header>
 <!-- 3 app-component -- input weather-box -->
-<app-weather-box [items]="items"></app-weather-box>
+<app-weather-box [items]="itemsApp"></app-weather-box>
 <!-- <p>Output header to app-component: {{ main?.city.name }}</p> -->
+
+<!--
+output dete
+(cityAdded) ===
+
+
+output otac
+metod
+=""
+
+
+  input
+
+  dete
+[items] pripada weather-box properti
+
+otac
+="itemsApp"
+
+
+
+ -->
 

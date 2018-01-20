@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RootObject } from './weather-interface';
+import { CityInfo } from './weather.service';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +8,22 @@ import { RootObject } from './weather-interface';
 })
 export class AppComponent {
 
-  items: RootObject[] = [];
+  // 555
+  itemsApp: CityInfo[] = [];
 
-
+  //
 
   // 2 header -- output --> app-component
-  receiveDataFromRoot(value: RootObject) {
+  onCityAdded(value: CityInfo) {
 
-    this.items.push(value);
+    this.itemsApp.push(value);
+  }
 
-    console.log('app-component ' + value.city.id);
+  onCityRemoved(value: CityInfo) {
+    const i = this.itemsApp.indexOf(value);
+    this.itemsApp.splice(i, 1);
+    console.log('test remove app component');
+
   }
 
 }
