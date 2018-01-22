@@ -1,7 +1,17 @@
+@import '~scss/mixins';
+
 .search-box-wrapper_button {
   display: flex;
   background-color: #fff;
   padding: 5px;
+  @include breakpoint('tablet') {
+    flex-direction: column;
+    width: 100%;
+  }
+  @include breakpoint('mobile') {
+    flex-direction: column;
+    width: 100%;
+  }
 }
 
 .search-box__botton {
@@ -10,6 +20,16 @@
   cursor: pointer;
   padding: 0 10px;
   margin-right: 5px;
+  @include breakpoint('tablet') {
+    padding: 10px 10px;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+  @include breakpoint('mobile') {
+    margin: 0;
+    padding: 15px 10px;
+    margin-bottom: 5px;
+  }
 }
 
 .search-box__botton--tab {
@@ -35,7 +55,13 @@
   color: rgba(0, 0, 0, 0.5);
   outline: none;
   border: none;
-  min-width: 500px;
+  max-width: 900px;
+  @include breakpoint('tablet') {
+    width: 100%;
+  }
+  @include breakpoint('mobile') {
+    width: 100%;
+  }
 }
 
 .search-box__imput {

@@ -20,7 +20,6 @@ export class AppComponent {
     const i = this.itemsApp.indexOf(value);
     this.itemsApp.splice(i, 1);
     console.log('test remove app component');
-
   }
 
 }
