@@ -14,7 +14,7 @@ export class SearchBoxComponent implements OnInit {
 
   main: CityInfo;
 
-  // 2 promeniti cityAdded
+  // output
   @Output() cityAdded = new EventEmitter<CityInfo>();
 
   // 5555
@@ -24,8 +24,6 @@ export class SearchBoxComponent implements OnInit {
   constructor(private _weather: WeatherService,
               private http: HttpClient) { }
 
-
-
   // input search
   cityName: string;
 
@@ -34,8 +32,6 @@ export class SearchBoxComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.result);
-    // call init() //
-    // this.init();
   }
 
   init() {
@@ -47,24 +43,19 @@ export class SearchBoxComponent implements OnInit {
       // http service
       this._weather.getWeather(city)
                    .subscribe(res => {
-
                       this.main = res;
                       console.log(res);
-
                       // output
                       this.cityAdded.emit(res);
-
                       // push data to resalt[]
                       this.result.push(res);
-
                       // empty field
                       this.cityName = '';
-
                     });
     });
   }
 
-  // add
+  // add cities on enter
   eventHandler(event) {
     if (event.keyCode === 13) {
       this.init();
@@ -73,13 +64,11 @@ export class SearchBoxComponent implements OnInit {
 
   // remove
   removeItem(i) {
-    // 555
     const root = this.result[i];
     this.result.splice(i, 1);
 
-    // 555
+    // remove from search and from box-item-componet
     this.cityRemoved.emit(root);
-    console.log('test remove 111');
   }
 }
 

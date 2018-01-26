@@ -6,7 +6,6 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class WeatherService {
-
   // di
   constructor(private _http: HttpClient) { }
 
@@ -19,7 +18,7 @@ export class WeatherService {
               .map((result) => {
                 // return result as RootObject;
                 const temp = result as RootObject;
-                // 555 transformacija
+                // transformation
                 return {
                   cityName: temp.city.name,
                   temp: temp.list[0].main.temp,
@@ -29,14 +28,10 @@ export class WeatherService {
                   date: temp.list[0].dt_txt
                 };
                 // return <RootObject>result;
-
               });
-
   }
-
 }
 
-// 555
 export interface CityInfo {
   cityName: string;
   temp: number;

@@ -1,19 +1,10 @@
 @import '~scss/mixins';
 
 .weather-box {
-  // flex: 1 1 32%;
   padding: 10px;
   margin: 5px;
   background-color: #e5e5e5;
-  // display: flex;
-  // align-items: center;
 }
-
-// .weather-box_content {
-//   display: flex;
-//   width: 100%;
-//   flex-direction: column;
-// }
 
 .content-box {
   display: flex;
@@ -46,31 +37,4 @@
       color: rgb(45, 141, 206);
     }
   }
-}
-
-// new scss
-
-.weather-box1 {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  background-color: aqua;
-  justify-content: center;
-}
-
-.box1 {
-  flex: 1 1 32%;
-  background-color: green;
-  margin: 5px;
-}
-
-.box-wrepper-box_level1 {
-  display: flex;
-  padding: 5px;
-  background-color: pink;
-}
-
-.box-level1 {
-  flex: 1 1 32%;
-  background-color: rgb(115, 128, 0);
 }

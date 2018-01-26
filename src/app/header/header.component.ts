@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   // 2 header -- output --> app-component
   @Output() cityAdded = new EventEmitter<CityInfo>();
 
-  // 555 u headr serach
+  // 3 header -- output --> serach
   @Output() cityRemoved = new EventEmitter<CityInfo>();
 
   constructor() { }
@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
     this.cityAdded.emit(value);
   }
 
-  // 555
+  // 3 header -- output --> serach
   onCityRemoved(value: CityInfo) {
     console.log('log from remove on header component');
     this.cityRemoved.emit(value);
