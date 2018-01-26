@@ -24,3 +24,10 @@
   justify-content: center;
 }
 
+.app-search-box {
+  width: 50%;
+  @include breakpoint('mobile') {
+    width: 100%;
+  }
+}
+

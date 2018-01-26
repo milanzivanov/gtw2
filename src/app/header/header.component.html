@@ -1,7 +1,9 @@
 <div class="search-box">
   <div class="wrapper">
       <div class="search-box-wrapper">
-        <app-search-box (cityAdded)="onCityAdded($event)" (cityRemoved)="onCityRemoved($event)"></app-search-box>
+        <app-search-box class="app-search-box"
+                        (cityAdded)="onCityAdded($event)"(cityRemoved)="onCityRemoved($event)">
+        </app-search-box>
       </div>
   </div>
 </div>
