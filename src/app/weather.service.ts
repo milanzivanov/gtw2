@@ -12,7 +12,7 @@ export class WeatherService {
   // geting wether data from api
   getWeather(cityName: string): Observable<CityInfo> {
 
-    return this._http.get(`http://api.openweathermap.org/data/2.5/forecast?id
+    return this._http.get(`https://api.openweathermap.org/data/2.5/forecast?id
     =524901&APPID=cf4acfccaeb719f8f2992c4f80d2031b&q=${cityName}&units=metric`)
               // .map(result => <RootObject>result);
               .map((result) => {
@@ -27,7 +27,6 @@ export class WeatherService {
                   wind: temp.list[0].wind.speed,
                   date: temp.list[0].dt_txt
                 };
-                // return <RootObject>result;
               });
   }
 }
