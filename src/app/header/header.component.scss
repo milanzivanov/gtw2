@@ -25,8 +25,11 @@
 }
 
 .app-search-box {
+  @include breakpoint('tablet') {
+    width: 100%;
+  }
   @include breakpoint('mobile') {
-    max-width: 100%;
+    width: 100%;
   }
 }
 

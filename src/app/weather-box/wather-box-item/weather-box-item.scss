@@ -11,6 +11,10 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: start;
+  @include breakpoint('tablet') {
+    flex-direction: column;
+    width: 100%;
+  }
   @include breakpoint('mobile') {
     flex-direction: column;
     width: 100%;
